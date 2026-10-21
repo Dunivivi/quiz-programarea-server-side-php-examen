@@ -2,7 +2,7 @@
   <div class="quiz container" [style.--accent]="lab()?.color">
     <header class="quiz__head">
       <div class="quiz__who">
-        <span class="module-tile module-tile--sm" aria-hidden="true">EX</span>
+        <span class="module-tile module-tile--sm" aria-hidden="true">{{ lab()?.short }}</span>
         <div>
           <p class="eyebrow">{{ lab()?.name }} · {{ s.student.prenume }} {{ s.student.nume }}</p>
           <p class="quiz__counter">
@@ -22,16 +22,22 @@
       }
     </header>
 
-    <ol class="segments" aria-label="Progres">
-      @for (item of s.questions; track $index; let i = $index) {
-        <li
-          class="segments__item"
-          [class.is-current]="i === s.current"
-          [class.is-done]="i < s.current"
-          [attr.title]="typeLabels[item.type]"
-        ></li>
-      }
-    </ol>
+    @if (s.questions.length <= 30) {
+      <ol class="segments" aria-label="Progres">
+        @for (item of s.questions; track $index; let i = $index) {
+          <li
+            class="segments__item"
+            [class.is-current]="i === s.current"
+            [class.is-done]="i < s.current"
+            [attr.title]="typeLabels[item.type]"
+          ></li>
+        }
+      </ol>
+    } @else {
+      <div class="progress" role="progressbar" aria-label="Progres" [attr.aria-valuenow]="s.current + 1" aria-valuemin="1" [attr.aria-valuemax]="s.questions.length">
+        <div class="progress__bar" [style.width.%]="(s.current / s.questions.length) * 100"></div>
+      </div>
+    }
 
     @if (question(); as q) {
       @for (key of [s.current]; track key) {

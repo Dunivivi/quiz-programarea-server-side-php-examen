@@ -84,6 +84,9 @@
 }
 
 .question {
+  // URL-urile și cuvintele foarte lungi trec pe rândul următor, nu ies din ecran
+  overflow-wrap: anywhere;
+
   &__text {
     font-size: var(--text-xl);
     font-weight: 700;
@@ -208,4 +211,8 @@
       width: 100%;
     }
   }
+}
+
+.progress {
+  margin-bottom: var(--space-6);
 }

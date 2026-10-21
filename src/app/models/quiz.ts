@@ -5,6 +5,8 @@ export interface Lab {
   id: string;
   /** Ex: „Laboratorul 2”. */
   name: string;
+  /** Textul scurt din pătrățelul colorat (ex: „T6”). */
+  short: string;
   /** Tema laboratorului. */
   title: string;
   description: string;
@@ -12,6 +14,8 @@ export interface Lab {
   topics: string[];
   color: string;
   questions: Question[];
+  /** Câte întrebări din fiecare tip are un test (implicit TEST_STRUCTURE din config). */
+  structure?: Record<QuestionType, number>;
 }
 
 export interface Student {

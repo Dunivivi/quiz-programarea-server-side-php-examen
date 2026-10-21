@@ -51,7 +51,7 @@ export class QuizService {
     this.integrity.reset();
 
     const questions = TYPE_ORDER.flatMap((type) =>
-      this.pick(lab, type, TEST_STRUCTURE[type]).map((index) => this.toSessionQuestion(lab, index)),
+      this.pick(lab, type, (lab.structure ?? TEST_STRUCTURE)[type]).map((index) => this.toSessionQuestion(lab, index)),
     );
 
     this.saveSession({

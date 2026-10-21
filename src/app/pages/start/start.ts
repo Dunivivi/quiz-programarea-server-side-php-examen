@@ -20,7 +20,7 @@ export class Start {
   readonly id = input.required<string>();
 
   protected readonly lab = computed(() => findLab(this.id()));
-  protected readonly structure = TEST_STRUCTURE;
+  protected readonly structure = computed(() => this.lab()?.structure ?? TEST_STRUCTURE);
 
   protected readonly nume = signal(this.quiz.lastStudent()?.nume ?? '');
   protected readonly prenume = signal(this.quiz.lastStudent()?.prenume ?? '');

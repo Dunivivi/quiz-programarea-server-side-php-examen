@@ -31,7 +31,7 @@ export class SheetsService {
       // titlurile coloanelor din tabel (coloanele noi se adaugă automat)
       row: {
         Data: new Date(result.date).toLocaleString('ro-RO'),
-        Test: lab?.name ?? result.labId,
+        Test: lab ? `${lab.name}: ${lab.title}` : result.labId,
         Nume: result.nume,
         Prenume: result.prenume,
         Grupa: result.grupa ?? '',

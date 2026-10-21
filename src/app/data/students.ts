@@ -1,7 +1,6 @@
 /**
- * Elevii care pot da testele, pe grupe: [Nume, Prenume].
+ * Elevii care pot da examenul: [Nume, Prenume].
  * Numele se compară fără să țină cont de majuscule, diacritice (ş/ș, ţ/ț), cratime și spații în plus.
- * Pentru o grupă nouă: adaugi un obiect nou în listă.
  */
 export interface Group {
   name: string;
@@ -9,47 +8,6 @@ export interface Group {
 }
 
 export const GROUPS: Group[] = [
-  {
-    name: 'Grupa 1',
-    students: [
-      ['Bejuc', 'Victor'],
-      ['Bîtlan', 'Alexandru'],
-      ['Blonschi', 'Cristina'],
-      ['Burdeniuc', 'Alex-Nicolae'],
-      ['Carauş', 'Mihai'],
-      ['Cîrlan', 'Corneliu'],
-      ['Cozma', 'Ştefan'],
-      ['Formoghei', 'Artiom'],
-      ['Frumusache', 'Vlad'],
-      ['Fulga', 'Vlad'],
-      ['Gheţan', 'Ilie'],
-      ['Iurco', 'Andrian'],
-      ['Iutiş', 'Pavel'],
-      ['Leşan', 'Denis'],
-      ['Lozovanu', 'Dan'],
-      ['Medveţchi', 'Dumitru'],
-      ['Negru', 'Daniela'],
-      ['Onofrei', 'Sergiu'],
-      ['Osoianu', 'Vladimir'],
-      ['Pînzaru', 'Daniel'],
-      ['Pîsla', 'Maxim'],
-      ['Poparcea', 'Nicolae'],
-      ['Prisacari', 'Cristian'],
-      ['Russu', 'Ion'],
-      ['Tanas', 'Egor'],
-      ['Tarnavski', 'Stanislav'],
-      ['Tcaci', 'Nicolae'],
-      ['Tcaciuc', 'Bogdan-Ion'],
-      ['Tudorean', 'Muhammad'],
-      ['Tutunaru', 'Andrei'],
-      ['Ursan', 'Daniel'],
-      ['Ursu', 'Nicoleta'],
-      ['Veveriţa', 'Dumitru'],
-      ['Vizir', 'Sergiu'],
-      ['Vrancean', 'Dan'],
-      ['Zburliuc', 'Stanislav'],
-    ],
-  },
   {
     name: 'Grupa 2',
     students: [

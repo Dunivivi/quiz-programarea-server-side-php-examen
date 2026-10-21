@@ -49,7 +49,7 @@ export class ExcelService {
 function summaryRow(r: QuizResult) {
   return {
     Data: new Date(r.date).toLocaleString('ro-RO'),
-    Test: findLab(r.labId)?.name ?? r.labId,
+    Test: findLab(r.labId)?.title ?? r.labId,
     Nume: r.nume,
     Prenume: r.prenume,
     Grupa: r.grupa ?? '',

@@ -35,6 +35,12 @@ export class Home {
     return notes.length ? Math.max(...notes) : null;
   }
 
+  /** Câte întrebări are un test din acest card. */
+  protected size(lab: Lab): number {
+    const s = lab.structure ?? TEST_STRUCTURE;
+    return s.theory + s.analysis + s.fill;
+  }
+
   protected count(lab: Lab, type: 'theory' | 'analysis' | 'fill'): number {
     return this.quiz.countByType(lab, type);
   }

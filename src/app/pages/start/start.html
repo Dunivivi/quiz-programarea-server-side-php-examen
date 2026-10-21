@@ -8,21 +8,21 @@
 
       <ul class="rules">
         <li>
-          <span class="rules__num">{{ structure.theory }}</span>
+          <span class="rules__num">{{ structure().theory }}</span>
           <div>
             <strong>Întrebări teoretice</strong>
             <span>alegi un răspuns din patru</span>
           </div>
         </li>
         <li>
-          <span class="rules__num">{{ structure.analysis }}</span>
+          <span class="rules__num">{{ structure().analysis }}</span>
           <div>
             <strong>Ce afișează codul</strong>
             <span>citești o secvență PHP și alegi ce afișează</span>
           </div>
         </li>
         <li>
-          <span class="rules__num">{{ structure.fill }}</span>
+          <span class="rules__num">{{ structure().fill }}</span>
           <div>
             <strong>Completare de cod</strong>
             <span>scrii ce lipsește în locul gol</span>
@@ -31,7 +31,7 @@
       </ul>
 
       <p class="muted start__note">
-        Răspunsurile corecte se văd abia la final. Nota = numărul de răspunsuri corecte (din 10) și
+        Răspunsurile corecte se văd abia la final. Nota se calculează din numărul de răspunsuri corecte și
         se salvează automat împreună cu numele tău.
       </p>
 
