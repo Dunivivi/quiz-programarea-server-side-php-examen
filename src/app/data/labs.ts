@@ -23,6 +23,8 @@ export const LABS: Lab[] = [
   {
     id: 'examen',
     short: 'EX',
+    // ascuns până la examen: pune `false` (sau șterge rândul) ca să apară
+    hidden: true,
     name: 'Examen',
     title: 'Programarea server-side a site-urilor Web',
     description: 'Examenul: 20 de întrebări din toate temele.',
@@ -86,3 +88,6 @@ export const LABS: Lab[] = [
 export function findLab(id: string): Lab | undefined {
   return LABS.find((l) => l.id === id);
 }
+
+/** Testele care pot fi date acum (fără cele ascunse). */
+export const OPEN_LABS = LABS.filter((l) => !l.hidden);

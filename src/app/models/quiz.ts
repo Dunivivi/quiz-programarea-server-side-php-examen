@@ -14,6 +14,8 @@ export interface Lab {
   topics: string[];
   color: string;
   questions: Question[];
+  /** Ascuns: nu apare pe pagina principală și nu poate fi pornit (ex: examenul, până în ziua lui). */
+  hidden?: boolean;
   /** Câte întrebări din fiecare tip are un test (implicit TEST_STRUCTURE din config). */
   structure?: Record<QuestionType, number>;
 }

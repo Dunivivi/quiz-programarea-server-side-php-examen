@@ -19,7 +19,11 @@ export class Start {
   /** Parametrul :id din rută (primit automat datorită withComponentInputBinding). */
   readonly id = input.required<string>();
 
-  protected readonly lab = computed(() => findLab(this.id()));
+  // un test ascuns (ex: examenul înainte de ziua lui) nu poate fi pornit nici prin link direct
+  protected readonly lab = computed(() => {
+    const lab = findLab(this.id());
+    return lab && !lab.hidden ? lab : undefined;
+  });
   protected readonly structure = computed(() => this.lab()?.structure ?? TEST_STRUCTURE);
 
   protected readonly nume = signal(this.quiz.lastStudent()?.nume ?? '');

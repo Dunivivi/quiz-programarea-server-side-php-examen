@@ -1,7 +1,7 @@
 import { Component, computed, inject } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { TEST_STRUCTURE } from '../../config';
-import { LABS, findLab } from '../../data/labs';
+import { OPEN_LABS, findLab } from '../../data/labs';
 import { Lab } from '../../models/quiz';
 import { QuizService } from '../../services/quiz.service';
 
@@ -15,7 +15,7 @@ export class Home {
   private readonly quiz = inject(QuizService);
   private readonly router = inject(Router);
 
-  protected readonly labs = LABS;
+  protected readonly labs = OPEN_LABS;
   protected readonly structure = TEST_STRUCTURE;
   protected readonly testSize = TEST_STRUCTURE.theory + TEST_STRUCTURE.analysis + TEST_STRUCTURE.fill;
 
