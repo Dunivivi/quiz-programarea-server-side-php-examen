@@ -24,7 +24,7 @@ export const LABS: Lab[] = [
     id: 'examen',
     short: 'EX',
     // ascuns până la examen: pune `false` (sau șterge rândul) ca să apară
-    hidden: true,
+    hidden: false,
     name: 'Examen',
     title: 'Programarea server-side a site-urilor Web',
     description: 'Examenul: 20 de întrebări din toate temele.',
